@@ -12,13 +12,13 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       },
 
       '& .input:first-child': {
-        borderTopLeftRadius: '8px',
-        borderBottomLeftRadius: '8px',
+        borderTopLeftRadius: '12px',
+        borderBottomLeftRadius: '12px',
       },
 
       '& .input:last-child': {
-        borderTopRightRadius: '8px',
-        borderBottomRightRadius: '8px',
+        borderTopRightRadius: '12px',
+        borderBottomRightRadius: '12px',
       },
     },
 
@@ -68,7 +68,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         if (!parsed.color) return null
 
         return {
-          '--input-color': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.3 }),
+          '--input-color': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.5 }),
           '--input-focus': color.DEFAULT,
         }
       },

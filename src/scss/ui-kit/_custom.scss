@@ -24,7 +24,13 @@
     @apply flex items-center justify-center static;
 
     & &-bullet {
-      @apply bg-current w-3 h-3 duration-2;
+      margin: 0 6px !important;
+
+      @apply bg-current opacity-100 w-2 h-2 duration-2;
+
+      &-active {
+        @apply bg-primary;
+      }
     }
   }
 

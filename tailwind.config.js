@@ -3,8 +3,6 @@
 module.exports = {
   content: ['./src/**/*.html', './src/ts/**/*.ts'],
 
-  darkMode: 'class',
-
   corePlugins: {
     container: false,
   },
@@ -19,53 +17,42 @@ module.exports = {
       sm: 575.98 + 'px',
       md: 767.98 + 'px',
       lg: 991.98 + 'px',
-      xl: 1199.98 + 'px',
+      xl: 1299.98 + 'px',
       xxl: 1999.98 + 'px',
     },
 
     colors: {
       primary: {
-        DEFAULT: '#af1a4c',
-        dark: '#831339',
+        DEFAULT: '#56C64F',
+        dark: '#49aa42',
       },
 
       second: {
-        DEFAULT: '#d7a751',
-        dark: '#c7902e',
+        DEFAULT: '#C3DFFF',
       },
 
       black: {
-        DEFAULT: '#000000',
+        DEFAULT: '#262626',
       },
 
       white: {
         DEFAULT: '#ffffff',
       },
 
-      gray: {
-        DEFAULT: '#b2b2b2',
-        dark: '#999',
-      },
-
       grey: {
-        DEFAULT: '#f6f7f9',
+        DEFAULT: '#F2F2F2',
       },
 
-      dark: {
-        DEFAULT: '#303030',
+      gray: {
+        DEFAULT: '#D9D9D9',
       },
 
       red: {
         DEFAULT: '#be1b1b',
       },
-
-      green: {
-        DEFAULT: '#27ae60',
-      },
     },
 
     fontFamily: {
-      alt: 'var(--font-alt)',
       base: 'var(--font-base)',
     },
 
@@ -210,10 +197,10 @@ module.exports = {
     size: {
       xs: '28px',
       sm: '36px',
-      md: '40px',
-      lg: '45px',
-      xl: '56px',
-      xxl: '64px',
+      md: '44px',
+      lg: '55px',
+      xl: '60px',
+      xxl: '66px',
     },
   },
 

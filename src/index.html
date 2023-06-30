@@ -1,77 +1,259 @@
-<% var data = {
+<%
+  var data = {
 
-  title: 'My library',
-  status: true
+    title: 'Центр профессиональной стоматологии',
+    status: true
 
-} %>
+  }
 
-<%= _.template(require('./includes/header.html').default)({data}) %>
+  var social = ['img/pictures/wa.svg', 'img/pictures/inst.svg']
+%>
+
+<%= _.template(require('./includes/header.html').default)({data, social}) %>
 
 <!-- Главный блок -->
 
-<main class="container flex flex-col items-center justify-center bg-white dark:bg-black min-h-[500px] lg:min-h-[600px]" id="header">
-  <img class="block mb-10" src="img/pictures/logo.svg" alt="">
-  <h1 class="font-alt font-bold text-center text-48 lg:text-6xl leading-2 mb-5 md:mb-10" data-movement="blend">Main block</h1>
-  <a class="btn btn-primary btn-lg btn-fill btn-glow max-w-[200px] w-full mx-auto" data-waved="light" data-scroll="top" href="#content">Show more</a>
-</main>
-
-<!-- Статьи -->
-
-<% var articles = [
+<% var main = [
   {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam repudiandae maxime quia culpa, est voluptatum hic at ipsa error officiis magni dolores molestiae inventore ipsum perferendis reiciendis sunt nesciunt possimus?'
+    delay: 'md:delay-4',
+    text: 'Не более 20 минут на один имплант'
   },
   {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    delay: 'md:delay-6',
+    text: 'Точная 3D-диагностика'
   },
   {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam repudiandae maxime quia culpa, est voluptatum hic at ipsa error officiis magni dolores molestiae inventore ipsum perferendis reiciendis sunt nesciunt possimus? Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-  },
-  {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam repudiandae maxime quia culpa, est voluptatum hic at ipsa error officiis magni dolores molestiae inventore ipsum perferendis reiciendis sunt nesciunt possimus?'
-  },
-  {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
-  },
-  {
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam repudiandae maxime quia culpa, est voluptatum hic at ipsa error officiis magni dolores molestiae inventore ipsum perferendis reiciendis sunt nesciunt possimus? Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+    delay: 'md:delay-8',
+    text: 'Без боли и костной пластики'
   }
 ] %>
 
-<section class="container container--xs container--distance flex flex-col items-center justify-center bg-grey dark:bg-dark" data-listing="1" id="content">
-  <h2 class="font-alt font-bold text-center text-36 lg:text-48 leading-2 mb-3 duration-5 anim anim--up" data-anim="hidden" data-movement="blend">Cards</h2>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">Construction and effect</h3>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-8 w-full mb-5 md:md-10">
-    <% for (var i = 0; i < 3; i++) { %>
-    <div class="duration-7 anim anim--up" data-anim="hidden">
-      <article class="card dark:bg-black h-full">
-        <div class="pack pack-rect-md bg-grey dark:bg-dark" data-movement="light">
-          <div class="loader">
-            <span class="loader-progress">
-              <svg class="loader-icon icon">
-                <use xlink:href="img/icons.svg#loader">
-              </svg>
-            </span>
-          </div>
+<main class="main container lg:flex lg:items-center relative bg-second bg-opacity-20 overflow-hidden lg:min-h-[750px] xl:py-0">
+  <div class="main-images hidden xl:block absolute top-0 bottom-0 xxl:left-1/2 right-1/4 w-full max-w-[540px] h-full">
+    <div class="swiper h-full">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < 4; i++) { %>
+        <div class="main-images-slide swiper-slide pack h-full">
           <picture>
-            <img class="image image-rise" src="https://picsum.photos/600/400?random=<%= i %>" loading="lazy" alt="">
+            <source srcset="img/pictures/main.webp" type="image/webp">
+            <img class="image image-scale-down" src="img/pictures/main.png" alt="">
           </picture>
         </div>
-        <div class="card-content py-5 px-3 md:px-5">
-          <h4 class="font-alt font-semibold text-24 mb-4">Article <%= i %></h4>
-          <p class="text-justify text-14 md:text-16 leading-5 mb-5"><%= articles[i].text %></p>
-          <button class="btn btn-primary btn-lg btn-fill mt-auto" data-waved="light">Button</button>
-        </div>
-      </article>
+        <% } %>
+      </div>
     </div>
-    <% } %>
   </div>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-8 w-full">
-    <% for (var i = 3; i < articles.length; i++) { %>
-    <div class="hidden sm:block" data-listing-item>
-      <article class="inverted h-full">
-        <div class="inverted-before card dark:bg-black">
-          <div class="pack pack-half bg-grey dark:bg-dark">
+  <div class="flex flex-col relative z-1 w-full lg:max-w-[600px] mb-7 md:mb-0">
+    <h1 class="font-bold text-primary text-38 sm:text-42 lg:text-6xl leading-2 mb-4 duration-5 ease-in-out anim anim--up" data-anim="hidden">Имплантация зубов <br> в Краснодаре</h1>
+    <div class="flex flex-col w-full md:max-w-[410px] mb-9">
+      <p class="font-normal text-18 leading-3 opacity-70 mb-6 lg:mb-12 duration-5 delay-1 ease-in-out anim anim--up" data-anim="hidden">Восстановим жевательную функцию и эстетическую улыбку</p>
+      <div class="flex items-center mb-4 sm:mb-8 duration-5 delay-2 ease-in-out anim anim--up" data-anim="hidden">
+        <img class="icon text-38 sm:text-46 mr-2 sm:mr-4" src="img/pictures/tooth.svg" alt="">
+        <h3 class="font-bold text-16 sm:text-18 lg:text-20 leading-2">Получите бесплатную консультацию и подробный план лечения</h3>
+      </div>
+      <form class="form xs:flex-row xs:items-center xs:justify-between gap-5 xs:gap-3 mb-4 duration-5 delay-3 ease-in-out anim anim--up" data-form="submit" data-anim="hidden">
+        <input type="hidden" value="Главная" name="theme">
+        <label class="form-label w-full" data-label="input">
+          <div class="form-wrapper">
+            <div class="input-cover">
+              <input class="input input-gray input-lg" data-input="tel" type="tel" placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _" name="tel">
+            </div>
+            <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+          </div>
+        </label>
+        <button class="btn btn-primary btn-lg btn-fill" data-waved="light" type="submit">Отправить</button>
+      </form>
+      <div class="font-normal text-14 leading-3 cursor-pointer duration-5 delay-3 ease-in-out anim anim--up" data-anim="hidden">
+        <span class="opacity-60">Отправляя форму, вы даете свое <br> согласие</span> <span class="underline underline-offset-4">на обработку персональных данных</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <% for (var i = 0; i < main.length; i++) { %>
+      <div class="duration-5 <%= main[i].delay %> ease-in-out anim anim--up" data-anim="hidden">
+        <div class="card h-full p-4" data-waved="dark">
+          <div class="card-content flex-row items-center md:items-start">
+            <span class="bg-primary rounded-max w-2 min-w-[8px] h-2 md:mt-1 mr-3"></span>
+            <p class="font-medium text-16 leading-3"><%= main[i].text %></p>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <div class="main-slider relative md:absolute z-1 md:top-10 lg:top-0 xxl:top-auto lg:bottom-0 xxl:bottom-20 xl:left-2/3 xxl:left-2/3 md:right-10 xxl:-translate-x-1/2 w-full md:max-w-[280px] lg:max-w-[320px] lg:h-max lg:my-auto mx-auto md:mx-0">
+    <div class="swiper h-full">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < 4; i++) { %>
+        <div class="swiper-slide h-auto">
+          <div class="card card--active bg-white bg-opacity-70 backdrop-blur-xl rounded-6 h-full py-5 sm:py-7 lg:py-12 px-4 sm:px-6 lg:px-10">
+            <div class="card-content items-center justify-center text-center h-full">
+              <img class="icon text-6xl mb-5 lg:mb-8" src="img/pictures/logo.svg" alt="">
+              <h4 class="font-semibold text-20 lg:text-24 leading-2 mb-2 sm:mb-4">Трофимов Андрей Евгеньевич</h4>
+              <p class="font-normal text-16 leading-2 mb-6">Главврач, стоматолог-имплантолог <br> Опыт работы: 15 лет</p>
+              <div class="pack pack-box w-24 sm:w-28">
+                <div class="absolute inset-0">
+                  <img class="main__image block w-full" src="img/pictures/player-text.svg" alt="">
+                </div>
+                <div class="flex items-center justify-center absolute inset-0">
+                  <button class="btn btn-black btn-fill rounded-max w-14 sm:w-[72px] h-14 sm:h-[72px]" data-waved="light">
+                    <svg class="icon text-36 sm:text-42">
+                      <use xlink:href="img/icons.svg#play">
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <div class="swiper-pagination md:hidden text-black mt-8"></div>
+    <button class="swiper-button-prev btn btn-black btn-light hidden md:flex absolute -left-6 rounded-max shadow-md w-12 h-12" data-waved="dark">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#arrow-left">
+      </svg>
+    </button>
+    <button class="swiper-button-next btn btn-black btn-light hidden md:flex absolute -right-6 rounded-max shadow-md w-12 h-12" data-waved="dark">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#arrow-right">
+      </svg>
+    </button>
+  </div>
+</main>
+
+<!-- Цены -->
+
+<% var price = [
+  {
+    icon: 'img/pictures/us.svg',
+    text: 'Nobel Biocare (4 шт.)',
+    value: '299 200 ₽'
+  },
+  {
+    icon: 'img/pictures/sw.svg',
+    text: 'Straumann (4 шт.)',
+    value: '242 000 ₽'
+  },
+  {
+    icon: 'img/pictures/kr.svg',
+    text: 'Dentium (4 шт.)',
+    value: '180 400 ₽'
+  },
+  {
+    icon: 'img/pictures/iz.svg',
+    text: 'Alpha Bio (4 шт.)',
+    value: '136 400 ₽'
+  }
+] %>
+
+<section class="price container bg-white overflow-hidden" id="price">
+  <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Имплантационные системы и цены</h2>
+  <div class="duration-5 ease-in-out anim anim--right" data-anim="hidden">
+    <div class="card rounded-3 sm:rounded-6 py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
+      <div class="pack pack-sheet hidden lg:block absolute bottom-0 right-0 opacity-40 xl:opacity-100 w-full max-w-[580px]">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/jaw.webp" type="image/webp">
+          <img class="image image-scale-down image-bottom-right" loading="lazy" src="img/pictures/jaw.png" alt="">
+        </picture>
+      </div>
+      <div class="card-content relative">
+        <h3 class="font-semibold text-20 sm:text-24 leading-2 mb-5 sm:mb-8">Стоимость одного импланта жевательного или переднего зуба</h3>
+        <div class="w-full lg:max-w-[500px]">
+          <h4 class="font-semibold text-16 leading-2 mb-5">1. Установка 4-х имплантов с мультиюнитами</h4>
+          <div class="flex flex-col gap-3 mb-5 sm:mb-9">
+            <% for (var i = 0; i < price.length; i++) { %>
+            <div class="flex items-end justify-between">
+              <div class="flex items-center min-w-max">
+                <img class="icon text-20 sm:text-24 mr-2 sm:mr-3" src="<%= price[i].icon %>" alt="">
+                <span class="font-normal text-14 sm:text-16 leading-1"><%= price[i].text %></span>
+              </div>
+              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+              <b class="text-14 sm:text-16 leading-1 min-w-max"><%= price[i].value %></b>
+            </div>
+            <% } %>
+          </div>
+          <h4 class="font-semibold text-16 leading-2 mb-5">2. Временное протезирование</h4>
+          <div class="flex flex-col gap-3 mb-3">
+            <div class="flex items-end justify-between">
+              <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Акриловый протез (временный) <br> с опорой на 4-х имплантах</span>
+              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+              <b class="text-14 sm:text-16 leading-1 min-w-max">51 700 ₽</b>
+            </div>
+          </div>
+          <p class="font-normal text-14 sm:text-16 leading-2 opacity-60 mb-5 sm:mb-9">Срок эксплуатации временного протеза 4-9 месяцев</p>
+          <h4 class="font-semibold text-16 leading-2 mb-5">3. Постоянное протезирование</h4>
+          <div class="flex flex-col gap-3 mb-5 sm:mb-9">
+            <div class="flex items-end justify-between">
+              <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Акриловый протез с опорой <br class="sm:hidden"> на 4-х имплантах</span>
+              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+              <b class="text-14 sm:text-16 leading-1 min-w-max">181 500 ₽</b>
+            </div>
+            <div class="flex items-end justify-between">
+              <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Метало-керамический протез <br> с опорой на 4-х имплантах</span>
+              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+              <b class="text-14 sm:text-16 leading-1 min-w-max">214 500 ₽</b>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-fill w-full xs:w-max" data-waved="light">Записаться на консультацию</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Гарантия -->
+
+<% var warranty = [
+  {
+    delay: '',
+    img: 'warranty-1',
+    title: 'Пожизненная гарантия на импланты',
+    text: 'Наши материалы на 100% биосовместимы с тканями организма'
+  },
+  {
+    delay: 'xl:delay-2',
+    img: 'warranty-2',
+    title: 'Гарантия 2 года на установку имплантов',
+    text: 'Переустановим имплант, если с ним произошли изменения'
+  },
+  {
+    delay: 'xl:delay-4',
+    img: 'warranty-3',
+    title: 'Гарантия 2 года на коронку',
+    text: 'Бесплатная замена коронки при ее повреждении'
+  }
+] %>
+
+<section class="container overflow-hidden" id="warranty">
+  <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Даем гарантии</h2>
+  <div class="mb-4 duration-5 ease-in-out anim anim--right" data-anim="hidden">
+    <div class="card rounded-3 sm:rounded-6 p-4 sm:p-8" data-waved="dark">
+      <h3 class="font-semibold text-20 sm:text-24 leading-2 mb-4">Стоимость одного импланта жевательного или переднего зуба</h3>
+      <p class="font-normal text-16 leading-5 mb-5">
+        Мы понимаем, что выбор имплантации — это важное решение, и мы готовы предоставить вам пожизненную гарантию. Материалы, которые мы используем, полностью совместимы с вашими тканями.
+      </p>
+      <p class="font-normal text-16 leading-5 mb-5">
+        Мы также предлагаем 2-летнюю гарантию на установку имплантов, и если вам потребуется, мы переустановим их бесплатно.
+      </p>
+      <p class="font-normal text-16 leading-5">
+        В случае повреждения коронки в течение 2 лет, мы также предоставим бесплатную замену. Мы гарантируем вашу уверенность в каждой детали нашей работы.
+      </p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 xl:gap-7">
+    <% for (var i = 0; i < warranty.length; i++) { %>
+    <div class="duration-5 <%= warranty[i].delay %> ease-in-out anim anim--up" data-anim="hidden">
+      <div class="card rounded-3 sm:rounded-6 h-full p-2 xl:p-4" data-waved="dark">
+        <div class="flex items-center">
+          <div class="pack pack-sheet bg-grey rounded-3 w-full max-w-[80px] sm:max-w-[100px] mr-3 sm:mr-6">
             <div class="loader">
               <span class="loader-progress">
                 <svg class="loader-icon icon">
@@ -80,111 +262,14 @@
               </span>
             </div>
             <picture>
-              <img class="image" src="https://picsum.photos/600/400?random=<%= i %>" loading="lazy" alt="">
+              <source srcset="img/pictures/<%= warranty[i].img %>.webp" type="image/webp">
+              <img class="image" loading="lazy" src="img/pictures/<%= warranty[i].img %>.jpg" alt="">
             </picture>
           </div>
-          <div class="card-content py-5 px-3 md:px-5">
-            <h4 class="font-alt font-semibold text-24">Article <%= i %></h4>
+          <div class="card-content">
+            <h4 class="font-bold text-16 sm:text-18 leading-2 mb-1 sm:mb-2"><%= warranty[i].title %></h4>
+            <p class="font-normal text-14 sm:text-16 leading-3"><%= warranty[i].text %></p>
           </div>
-        </div>
-        <div class="inverted-after card dark:bg-black">
-          <div class="card-content py-5 px-3 md:px-5">
-            <h4 class="font-alt font-semibold text-24 mb-4">Article <%= i %></h4>
-            <p class="text-justify text-14 md:text-16 leading-5 mb-5"><%= articles[i].text %></p>
-            <button class="btn btn-primary btn-lg btn-fill mt-auto" data-waved="light">Button</button>
-          </div>
-        </div>
-      </article>
-    </div>
-    <% } %>
-  </div>
-  <button class="btn btn-second btn-lg btn-fade sm:hidden max-w-[200px] w-full mt-5 mx-auto" data-listing-show data-waved="dark">Show more</button>
-</section>
-
-<!-- Кнопки -->
-
-<% var buttons = ['', 'btn-contur', 'btn-fade', 'btn-contur btn-fade', 'btn-fill', 'btn-light', 'btn-xxl', 'btn-xl', 'btn-lg', 'btn-md', 'btn-sm', 'btn-xs', 'btn-contur btn-swipe', 'btn-fill btn-glow', 'data-waved="light"', 'data-waved="dark"', 'data-bubbles="hidden"', 'btn-rect', 'btn-frame', 'btn-lines'] %>
-
-<section class="container container--xs flex flex-col items-center justify-center bg-white dark:bg-black overflow-hidden">
-  <h2 class="font-alt font-bold text-center text-36 lg:text-48 leading-2 mb-3" data-movement="blend">Buttons</h2>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">Buttons standard</h3>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full mb-5 md:mb-10">
-    <% for (var i = 0; i < 6; i++) { %>
-    <button class="btn btn-primary btn-lg <%= buttons[i] %>">btn--primary <%= buttons[i] %></button>
-    <% } %>
-  </div>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">Buttons size</h3>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full mb-5 md:mb-10">
-    <% for (var i = 6; i < 12; i++) { %>
-    <button class="btn btn-primary <%= buttons[i] %> btn-fill"><%= buttons[i] %></button>
-    <% } %>
-  </div>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">Buttons effects</h3>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full mb-5 md:mb-10">
-    <% for (var i = 12; i < 14; i++) { %>
-    <button class="btn btn-primary btn-lg <%= buttons[i] %>"><%= buttons[i] %></button>
-    <% } %>
-  </div>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">Buttons click</h3>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full mb-5 md:mb-10">
-    <% for (var i = 14; i < 17; i++) { %>
-    <button class="btn btn-primary btn-lg btn-fill" <%= buttons[i] %>><%= buttons[i] %></button>
-    <% } %>
-  </div>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">Buttons click</h3>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-    <% for (var i = 17; i < buttons.length; i++) { %>
-    <button class="btn btn-primary btn-lg <%= buttons[i] %>"><%= buttons[i] %></button>
-    <% } %>
-  </div>
-</section>
-
-<!-- Аккордеон -->
-
-<% var accordion = [
-  {
-    data: 'active',
-    number: '1',
-    items: '2'
-  },
-  {
-    data: 'hidden',
-    number: '2',
-    items: '4'
-  },
-  {
-    data: 'hidden',
-    number: '3',
-    items: '3'
-  }
-] %>
-
-<section class="documents container container--distance flex flex-col items-center justify-center bg-grey dark:bg-dark">
-  <h2 class="font-alt font-bold text-center text-36 lg:text-48 leading-2 mb-3" data-movement="blend">Accordion</h2>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">Drop-down list</h3>
-  <div class="flex flex-col gap-5 w-full">
-    <% for (var i = 0; i < accordion.length; i++) { %>
-    <div class="documents__accordion relative bg-second bg-opacity-10 rounded-4 shadow-md overflow-hidden py-4 md:py-6 px-4" data-accordion="<%= accordion[i].data %>">
-      <div class="flex items-center justify-between gap-4">
-        <h4 class="font-alt font-semibold text-16 md:text-20">Documents - <%= accordion[i].number %></h4>
-        <button class="btn btn-primary btn-fill text-14 rounded-max w-9 h-9" data-accordion-toggle data-waved="light">
-          <svg class="documents__arrow icon text-14 duration-3">
-            <use xlink:href="img/icons.svg#arrow-right">
-          </svg>
-        </button>
-      </div>
-      <div data-accordion-content>
-        <div class="flex flex-col gap-3 pt-4">
-          <% for (var j = 0; j < accordion[i].items; j++) { %>
-          <a class="flex items-center gap-4 relative hover:underline underline-offset-4 bg-white dark:bg-black rounded-2 p-3" data-waved="dark" href="javascript: ;">
-            <div class="icon flex items-center justify-center bg-primary bg-opacity-10 text-primary text-48 rounded-2">
-              <svg class="icon text-24">
-                <use xlink:href="img/icons.svg#file">
-              </svg>
-            </div>
-            <p class="text-14 md:text-16">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-          </a>
-          <% } %>
         </div>
       </div>
     </div>
@@ -192,299 +277,124 @@
   </div>
 </section>
 
-<!-- Фильтер -->
+<!-- Результат -->
 
-<% var numbers = [
-  {
-    text: 'text-36',
-    number: '36'
-  },
-  {
-    text: 'text-32',
-    number: '32'
-  },
-  {
-    text: 'text-28',
-    number: '28'
-  },
-  {
-    text: 'text-24',
-    number: '24'
-  },
-  {
-    text: 'text-20',
-    number: '20'
-  },
-  {
-    text: 'text-16',
-    number: '16'
-  },
-  {
-    text: 'text-12',
-    number: '12'
-  }
-] %>
-
-<section class="filtering container flex flex-col items-center bg-white dark:bg-black text-white bg-no-repeat bg-center bg-cover overflow-hidden min-h-screen" data-section data-bg="img/pictures/town-grey.jpg" data-bg-webp="img/pictures/town-grey.webp">
-  <h2 class="font-alt font-bold text-center text-36 lg:text-48 leading-2 mb-3" data-movement="blend">Filter</h2>
-  <h3 class="font-semibold text-16 md:text-18 leading-2 mb-5 md:mb-10" data-movement="blend">paralax, form and other...</h3>
-  <div class="relative w-full max-w-xl mx-auto" data-filter>
-    <picture>
-      <img class="filtering__circle filtering__circle--grey icon absolute z-1 top-20 -left-8 text-6xl drop-shadow-md pointer-events-none ease-linear duration-2" data-parallax="layer" src="img/pictures/circle-grey.png" alt="">
-    </picture>
-    <picture>
-      <img class="filtering__circle filtering__circle--white icon absolute z-1 -bottom-8 -right-8 text-6xl drop-shadow-md pointer-events-none ease-linear duration-2" data-parallax="layer" src="img/pictures/circle-white.png" alt="">
-    </picture>
-    <picture>
-      <img class="icon absolute z-1 -bottom-80 -right-7 text-6xl drop-shadow-md pointer-events-none ease-linear duration-1" data-parallax="scroll" data-parallax-depth="1.5" data-reverse src="img/pictures/circle-red.png" alt="">
-    </picture>
-    <div class="flex flex-col md:flex-row items-center justify-between gap-0 md:gap-4 relative bg-grey md:bg-opacity-0 text-second md:text-white rounded-4 md:rounded-none md:border-b md:border-solid md:border-white overflow-hidden mb-5 md:mb-10 md:pb-4">
-      <div class="filtering__category filter-active flex-grow text-center text-20 cursor-pointer w-full p-4 md:p-0" data-filter-category="category-1">Text-style</div>
-      <div class="filtering__category flex-grow text-center text-20 cursor-pointer w-full p-4 md:p-0" data-filter-category="category-2">Form-validate</div>
-      <div class="filtering__category flex-grow text-center text-20 cursor-pointer w-full p-4 md:p-0" data-filter-category="category-3">Switches</div>
-      <div class="filtering__category flex-grow text-center text-20 cursor-pointer w-full p-4 md:p-0" data-filter-category="category-4">File</div>
-      <span class="hidden md:block absolute left-0 bottom-0 bg-primary rounded-t-2 h-1 ease-linear duration-3" data-filter-line></span>
-    </div>
-    <div class="bg-white text-black rounded-6 shadow-md p-7 md:p-10">
-      <div class="filtering__card" data-filter-card="category-1">
-        <ul class="flex flex-col gap-4 list-disc list-inside text-primary">
-          <% for (var i = 0; i < numbers.length; i++) { %>
-          <li>
-            <span class="text-second <%= numbers[i].text %>">
-              --text-<span data-number="<%= numbers[i].number %>" data-number-step="1" data-number-time="2" data-number-fixed="0">0</span>
-            </span>
-          </li>
-          <% } %>
-        </ul>
-        <p class="text-primary mt-5">
-          <q class="bg-grey font-semibold text-justify text-18 leading-9 box-decoration-clone shadow-md rounded-4 py-1 px-3" data-record="Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ex omnis, ut dolorem dolore enim expedita?" data-record-speed="50"></q>
-        </p>
-      </div>
-      <div class="filtering__card hidden" data-filter-card="category-2">
-        <form class="form w-full max-w-[400px] mx-auto" data-form="submit" data-files data-datepicker id="form-data">
-          <input type="hidden" value="Главная" name="theme">
-          <label class="form-label mb-5" data-label="input">
-            <span class="text-20 mb-3">Name</span>
-            <div class="form-wrapper">
-              <div class="input-cover">
-                <input class="input input-gray input-lg" data-input="name" type="text" placeholder="Name" name="name">
-              </div>
-              <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
-            </div>
-          </label>
-          <label class="form-label mb-5" data-label="input">
-            <span class="text-20 mb-3">Telephone</span>
-            <div class="form-wrapper">
-              <div class="input-cover">
-                <input class="input input-gray input-lg" data-input="tel" type="tel" placeholder="+7 (" name="tel">
-              </div>
-              <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
-            </div>
-          </label>
-          <label class="form-label mb-5" data-label="input">
-            <span class="text-20 mb-3">Email</span>
-            <div class="form-wrapper">
-              <div class="input-cover">
-                <input class="input input-gray input-lg" data-input="email" type="text" placeholder="_@_._" name="email">
-              </div>
-              <span class="form-error" data-error>Пожалуйста, введите корректный адрес!</span>
-            </div>
-          </label>
-          <label class="form-label mb-5" data-label="input">
-            <span class="text-20 mb-3">Date</span>
-            <div class="form-wrapper">
-              <div class="input-cover">
-                <input class="input input-gray input-lg" data-input="min" data-position="top left" type="text" name="check-in">
-                <input class="input input-gray input-lg" data-input="max" type="text" name="check-out">
-              </div>
-              <div class="form-icon form-icon--right text-20">
-                <svg class="icon">
-                  <use xlink:href="img/icons.svg#calendar">
-                </svg>
-              </div>
-              <span class="form-error" data-error>Пожалуйста, укажите дату!</span>
-            </div>
-          </label>
-          <label class="form-label mb-5" data-label="input">
-            <span class="text-20 mb-3">Number</span>
-            <div class="form-wrapper">
-              <div class="input-cover">
-                <input class="input input-gray input-lg" data-input="number" type="text" placeholder="12345" name="number">
-              </div>
-              <span class="form-error" data-error>Пожалуйста, введите число!</span>
-            </div>
-          </label>
-          <label class="form-label mb-5" data-label="input">
-            <span class="text-20 mb-3">Select</span>
-            <div class="form-wrapper">
-              <div class="input-cover">
-                <select class="input input-gray input-lg" data-input="select" name="select">
-                  <option value="0" disabled hidden selected>Select</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </div>
-              <div class="form-icon form-icon--right text-12">
-                <svg class="icon">
-                  <use xlink:href="img/icons.svg#arrow-bottom">
-                </svg>
-              </div>
-              <span class="form-error" data-error>Пожалуйста, выберите вариант!</span>
-            </div>
-          </label>
-          <label class="form-label mb-5" data-label="input">
-            <span class="text-20 mb-3">Reviews</span>
-            <div class="form-wrapper">
-              <div class="input-cover">
-                <textarea class="input input-gray input-lg h-[200px]" data-input="text" type="text" placeholder="Reviews" name="text"></textarea>
-              </div>
-              <span class="form-error" data-error>Пожалуйста, оставьте отзыв!</span>
-            </div>
-          </label>
-          <div class="form-wrapper mb-5" data-label="download">
-            <label class="btn btn-second btn-lg btn-fade" data-waved="dark">
-              <input class="hidden" data-input="file" type="file">
-              <span data-files-text>Загрузить файлы</span>
-            </label>
-            <span class="form-error" data-error>Пожалуйста, загрузите изображение!</span>
-          </div>
-          <ul class="flex flex-col gap-1 text-12" data-files-listing></ul>
-          <label class="form-label mb-5" data-label="input">
-            <div class="form-wrapper">
-              <div class="flex flex-row items-center">
-                <input class="switch switch--checkbox mr-2" data-input="switch" type="checkbox" checked>
-                <span class="text-20">Policy</span>
-              </div>
-              <span class="form-error" data-error>Пожалуйста, примите соглашение!</span>
-            </div>
-          </label>
-          <button class="btn btn-second btn-lg btn-fill mb-5" data-waved="dark" type="submit">Submit</button>
-          <div class="hover:underline underline-offset-4 text-second text-18 cursor-pointer w-max mx-auto" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Privacy policy</div>
-        </form>
-      </div>
-      <div class="filtering__card hidden" data-filter-card="category-3">
-        <div class="flex flex-col gap-6">
-          <h4 class="font-semibold text-24">Checkbox:</h4>
-          <div class="flex items-center gap-5">
-            <input class="switch switch--checkbox" type="checkbox">
-            <input class="switch switch--checkbox text-second" type="checkbox">
-            <input class="switch switch--checkbox" type="checkbox" disabled>
-          </div>
-          <h4 class="font-semibold text-24">Radio:</h4>
-          <div class="flex items-center gap-5">
-            <input class="switch switch--radio" type="radio" name="radio">
-            <input class="switch switch--radio text-second" type="radio" name="radio">
-            <input class="switch switch--radio" type="radio" name="radio" disabled>
-          </div>
-          <h4 class="font-semibold text-24">Toggle:</h4>
-          <input class="switch switch--toggle" type="checkbox">
-          <h4 class="font-semibold text-24">Quantity:</h4>
-          <div class="quantity" data-quantity>
-            <button class="quantity-btn btn btn-gray btn-fill" data-quantity-decrease data-waved="light">-</button>
-            <div class="quantity-cover input-cover">
-              <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
-            </div>
-            <button class="quantity-btn btn btn-gray btn-fill" data-quantity-increase data-waved="light">+</button>
-          </div>
-          <h4 class="font-semibold text-24">Rating:</h4>
-          <div class="rating bg-gray bg-opacity-40 rounded-10 p-3">
-            <% for (var i = 5; i > 0; i--) { %>
-            <input class="rating-input hidden" id="rating-<%= i %>" type="radio" value="<%= i %>" name="rating">
-            <label class="rating-star" for="rating-<%= i %>">
-              <svg class="icon">
-                <use xlink:href="img/icons.svg#star">
-              </svg>
-            </label>
-            <% } %>
-          </div>
-          <h4 class="font-semibold text-24">Range:</h4>
-          <div class="range w-full max-w-[350px]" data-range>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-16">Value</span>
-              <output class="text-16 opacity-60" data-range-output></output>
-            </div>
-            <div class="relative text-white pointer-events-none">
-              <div class="range-wrapper" data-range-wrapper>
-                <input class="range-input bg-gray" data-range-input type="range" step="1" max="10" value="5">
-                <div class="range-progress bg-primary" data-range-progress></div>
-                <output class="range-bubble bg-primary" data-range-bubble></output>
-              </div>
-            </div>
-          </div>
-          <div class="range w-full max-w-[350px]" data-range>
-            <div class="flex items-center justify-between mb-4">
-              <div class="range-cover input-cover">
-                <input class="input input-gray input-lg text-center" data-range-output data-input="number" type="text" maxlength="3">
-              </div>
-              <div class="range-cover input-cover">
-                <input class="input input-gray input-lg text-center" data-range-output data-input="number" type="text" maxlength="3">
-              </div>
-            </div>
-            <div class="relative text-white pointer-events-none">
-              <div class="range-wrapper" data-range-wrapper>
-                <input class="range-input bg-primary" data-range-input type="range" step="1" max="100" value="30">
-                <div class="range-progress bg-gray" data-range-progress></div>
-                <output class="range-bubble bg-primary" data-range-bubble></output>
-              </div>
-              <div class="range-wrapper" data-range-wrapper>
-                <input class="range-input bg-primary" data-range-input type="range" step="1" max="100" value="70">
-                <div class="range-progress bg-gray" data-range-progress></div>
-                <output class="range-bubble bg-primary" data-range-bubble></output>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="filtering__card hidden" data-filter-card="category-4">
-        <div class="w-full max-w-xs mx-auto" id="copy">
-          <div class="flex items-center gap-3 w-full mb-5">
-            <div class="pack pack-box bg-primary bg-opacity-40 rounded-max cursor-pointer w-full max-w-[40px]" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-avatar.html">
-              <div class="flex items-center justify-center absolute inset-0">
-                <svg class="icon text-white text-14">
-                  <use xlink:href="img/icons.svg#user">
-                </svg>
-              </div>
-              <picture>
-                <img class="image" data-avatar src="" alt="">
-              </picture>
-            </div>
-            <h4 class="text-24 font-bold">Name Surname</h4>
-          </div>
-          <form class="form mb-5" data-form="submit">
-            <input type="hidden" value="Изображение" name="theme">
-            <div class="form-label items-center justify-center" data-label="download">
-              <div class="form-wrapper mb-5">
-                <div class="pack pack-box bg-second rounded-4 w-full duration-2" data-drag>
-                  <picture>
-                    <img class="image image-scale-down" data-file="image" src="img/pictures/geo.png" alt="">
-                  </picture>
+<section class="result container bg-white overflow-hidden" id="result">
+  <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Наши работы</h2>
+  <div class="result-slider relative duration-5 ease-in-out anim anim--left" data-anim="hidden">
+    <div class="swiper p-[15px] sm:p-0 -m-[15px] sm:m-0">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < 4; i++) { %>
+        <div class="swiper-slide h-auto">
+          <div class="card rounded-3 sm:rounded-6 shadow-none p-3 lg:p-6">
+            <div class="card-content md:flex-row md:items-center md:justify-between gap-3 lg:gap-6">
+              <div class="pack pack-rect-md xs:pack-rect-sm md:pack-rect-md flex-grow bg-grey rounded-s-3 md:rounded-s-6 rounded-e-3 md:rounded-e-none">
+                <div class="loader">
+                  <span class="loader-progress">
+                    <svg class="loader-icon icon">
+                      <use xlink:href="img/icons.svg#loader">
+                    </svg>
+                  </span>
                 </div>
-                <span class="form-error" data-error>Пожалуйста, загрузите изображение!</span>
+                <picture>
+                  <source srcset="img/pictures/result-before.webp" type="image/webp">
+                  <img class="image image-rise" loading="lazy" src="img/pictures/result-before.jpg" alt="">
+                </picture>
+                <div class="flex items-center justify-center absolute bottom-3 lg:bottom-6 left-3 lg:left-6 bg-white font-semibold text-center text-black text-16 sm:text-20 leading-1 rounded-3 sm:rounded-6 w-14 sm:w-24 h-14 sm:h-24" data-waved="dark">До</div>
               </div>
-              <div class="flex flex-wrap items-center justify-center gap-4 w-full">
-                <label class="btn btn-primary btn-lg btn-fill w-full sm:w-auto" data-waved="light">
-                  <input class="hidden" data-input="file" type="file" name="file[]">
-                  Загрузить
-                </label>
-                <button class="btn btn-primary btn-lg btn-contur w-full sm:w-auto" data-waved="dark" type="submit">Отправить</button>
+              <div class="pack pack-rect-md xs:pack-rect-sm md:pack-rect-md flex-grow bg-grey rounded-s-3 md:rounded-s-none rounded-e-3 md:rounded-e-6">
+                <div class="loader">
+                  <span class="loader-progress">
+                    <svg class="loader-icon icon">
+                      <use xlink:href="img/icons.svg#loader">
+                    </svg>
+                  </span>
+                </div>
+                <picture>
+                  <source srcset="img/pictures/result-after.webp" type="image/webp">
+                  <img class="image image-rise" loading="lazy" src="img/pictures/result-after.jpg" alt="">
+                </picture>
+                <div class="flex items-center justify-center absolute bottom-3 lg:bottom-6 left-3 lg:left-6 bg-primary font-semibold text-center text-white text-16 sm:text-20 leading-1 rounded-3 sm:rounded-6 w-14 sm:w-24 h-14 sm:h-24" data-waved="light">После</div>
               </div>
             </div>
-          </form>
-          <div class="flex flex-wrap items-center justify-center gap-4 w-full">
-            <div class="input-cover relative w-full sm:w-max" data-copy>
-              <input class="input input-gray input-lg absolute inset-0 opacity-0" data-copy-input type="text" value="http://localhost:9000/index.html#copy">
-              <button class="btn btn-gray btn-lg btn-fill w-full px-10" data-copy-button data-waved="dark">Copy</button>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <div class="swiper-pagination text-black mt-8"></div>
+    <button class="swiper-button-prev btn btn-black btn-light hidden md:flex absolute -left-6 xl:-left-16 rounded-max shadow-md w-14 h-14" data-waved="dark">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#arrow-left">
+      </svg>
+    </button>
+    <button class="swiper-button-next btn btn-black btn-light hidden md:flex absolute -right-6 xl:-right-16 rounded-max shadow-md w-14 h-14" data-waved="dark">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#arrow-right">
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- Этапы -->
+
+<% var stages = [
+  {
+    img: 'stages-1',
+    title: 'Консультация и обследование',
+    text: 'Оценка состояния здоровья, 3D-фотопротокол, прицельные снимки. Вы получите полноценный план лечения с итоговой стоимостью'
+  },
+  {
+    img: 'stages-2',
+    title: 'Имплантация',
+    text: 'Удаление несостоятельных зубов при необходимости, установка имплантов, снятие оттисков для изготовления коронки'
+  },
+  {
+    img: 'stages-3',
+    title: 'Формирование десны',
+    text: 'Установка формирователя для подготовки десны к успешной установке коронки'
+  },
+  {
+    img: 'stages-4',
+    title: 'Установка абатмента',
+    text: 'Обеспечивает устойчивое соединение импланта с зубной коронкой'
+  },
+  {
+    img: 'stages-5',
+    title: 'Установка коронки',
+    text: 'Установка и фиксация постоянной коронки врачом-ортопедом. Дальнейшее наблюдение через 6 месяцев'
+  }
+] %>
+
+<section class="container" id="stages">
+  <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Этапы</h2>
+  <div class="flex flex-col gap-8">
+    <% for (var i = 0; i < stages.length; i++) { %>
+    <div class="sticky top-0 left-0 right-0 duration-5 ease-in-out anim anim--up" data-anim="hidden">
+      <div class="card rounded-3 sm:rounded-6 p-4" data-waved="dark">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-10">
+          <div class="pack pack-box bg-grey rounded-3 w-full max-w-[120px]">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
             </div>
-            <button class="btn btn-gray btn-lg btn-fill w-full sm:w-auto px-10" data-waved="dark" data-fancybox-calendar data-type="ajax" data-src="dialogs/dialog-calendar.html">Calendar</button>
+            <picture>
+              <source srcset="img/pictures/<%= stages[i].img %>.webp" type="image/webp">
+              <img class="image" loading="lazy" src="img/pictures/<%= stages[i].img %>.jpg" alt="">
+            </picture>
+          </div>
+          <div class="card-content">
+            <h3 class="font-semibold text-20 md:text-24 leading-1 mb-1 sm:mb-2"><%= stages[i].title %></h3>
+            <p class="font-normal text-16 leading-3"><%= stages[i].text %></p>
           </div>
         </div>
       </div>
     </div>
+    <% } %>
   </div>
 </section>
-
-<%= _.template(require('./includes/player.html').default)() %>
 
 <%= require('./includes/footer.html').default %>
