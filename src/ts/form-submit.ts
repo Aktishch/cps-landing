@@ -4,7 +4,7 @@ import formValidate from './functions/form-validate'
 const formSubmit = (event: Event): void => {
   const form = event.target as HTMLFormElement
 
-  if (form.dataset.form == 'submit') {
+  if (form.dataset.form == 'submit' || form.dataset.form == 'quiz') {
     event.preventDefault()
 
     if (!formValidate.init(form)) return
@@ -27,11 +27,29 @@ const formSubmit = (event: Event): void => {
       .then((response: any): void => {
         fancybox.close()
 
-        fancybox.open('./dialogs/dialog-submit.html')
+        if (form.dataset.form == 'submit') {
+          fancybox.open('./dialogs/dialog-submit.php')
 
-        form.reset()
+          form.reset()
 
-        submitBtn.removeAttribute('disabled')
+          submitBtn.removeAttribute('disabled')
+        }
+
+        if (form.dataset.form == 'quiz') {
+          const submit = form.querySelector('*[data-form-submit]') as HTMLElement
+          const quiz = form.querySelector('*[data-form-quiz]') as HTMLElement
+          const image = form.querySelector('*[data-form-image]') as HTMLElement
+          const success = form.querySelector('*[data-form-success]') as HTMLElement
+
+          submit.classList.remove('hidden')
+          submit.classList.add('flex')
+
+          quiz.remove()
+          image.remove()
+
+          success.classList.remove('hidden')
+          success.classList.add('flex')
+        }
       })
       .catch((error: string): void => console.log('The form has not been sent', error))
   } else if (form.dataset.form == 'action') {

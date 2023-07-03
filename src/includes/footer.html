@@ -1,31 +1,94 @@
-<!-- Карта -->
+<!-- Контакты -->
 
-<!-- <section class="container container--distance relative bg-grey dark:bg-dark overflow-hidden h-96">
-  <div class="loader">
-    <span class="loader-progress">
-      <svg class="loader-icon icon">
-        <use xlink:href="img/icons.svg#loader">
-      </svg>
-    </span>
+<section class="container relative overflow-hidden py-12" id="contacts">
+  <div class="relative md:absolute inset-0 bg-grey rounded-3 md:rounded-none overflow-hidden h-[350px] md:h-auto mb-7 md:mb-0">
+    <div class="loader">
+      <span class="loader-progress">
+        <svg class="loader-icon icon">
+          <use xlink:href="img/icons.svg#loader">
+        </svg>
+      </span>
+    </div>
+    <div class="absolute inset-0 overflow-hidden" id="yandex-map"></div>
   </div>
-  <div class="absolute inset-0 overflow-hidden" id="yandex-map"></div>
-</section> -->
+  <div class="relative w-full md:max-w-[450px] duration-5 ease-in-out anim anim--right" data-anim="hidden">
+    <div class="card bg-white bg-opacity-70 backdrop-blur-md border-none rounded-3 md:rounded-6 py-6 md:py-12 px-4 md:px-12">
+      <div class="card-content">
+        <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10">Контакты</h2>
+        <div class="flex flex-col gap-5 md:gap-8 mb-7 md:mb-12">
+          <div class="flex items-center">
+            <svg class="icon text-primary text-20 md:text-24 mr-2 md:mr-3">
+              <use xlink:href="img/icons.svg#geo">
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="font-normal text-14 md:text-16 leading-1 opacity-60 mb-1">Наш адрес</span>
+              <span class="font-semibold text-16 md:text-18 leading-1">г. Краснодар,ул. Минская 122/9</span>
+            </div>
+          </div>
+          <div class="flex">
+            <svg class="icon text-primary text-20 md:text-24 mr-2 md:mr-3">
+              <use xlink:href="img/icons.svg#tel">
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="font-normal text-14 md:text-16 leading-1 opacity-60 mb-1">Наш телефон</span>
+              <a class="btn btn-primary text-black font-semibold text-16 md:text-18 leading-1 mb-1" data-waved="light" href="tel: 8 (928) 210-90-60">8 (928) 210-90-60</a>
+              <a class="btn btn-primary text-black font-semibold text-16 md:text-18 leading-1" data-waved="light" href="tel: 8 (861) 290-90-60">8 (861) 290-90-60</a>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <svg class="icon text-primary text-20 md:text-24 mr-2 md:mr-3">
+              <use xlink:href="img/icons.svg#email">
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="font-normal text-14 md:text-16 leading-1 opacity-60 mb-1">Наша почта</span>
+              <a class="btn btn-primary text-black font-semibold text-16 md:text-18 leading-1" data-waved="light" href="mailto: centrprofstom@mail.ru">centrprofstom@mail.ru</a>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <svg class="icon text-primary text-20 md:text-24 mr-2 md:mr-3">
+              <use xlink:href="img/icons.svg#clock">
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="font-normal text-14 md:text-16 leading-1 opacity-60 mb-1">Время работы:</span>
+              <span class="font-semibold text-16 md:text-18 leading-1">Ежедневно с 08.00 до 20.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <% for (var i = 0; i < social.length; i++) { %>
+          <a class="btn btn-primary rounded-1" href="" target="_blank">
+            <img class="icon text-38" src="<%= social[i] %>" alt="">
+          </a>
+          <% } %>
+        </div>
+        <button class="btn btn-primary btn-lg btn-fill mt-8" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-contacts.html">Контакты контролирующих организаций</button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Подвал -->
 
-<!-- <footer class="container flex flex-wrap flex-col md:flex-row items-center justify-between gap-4 bg-black text-second pt-4 pb-10 md:pb-4" id="footer">
-  <a class="btn btn-white w-36" data-waved="light" href="/">
-    <picture>
-      <source srcset="img/pictures/logo.webp" type="image/webp">
-      <img class="w-full" src="img/pictures/logo.png" alt="">
-    </picture>
-  </a>
-  <address class="text-center text-16 leading-4">​Рождественская набережная, <br> 45/1​5 офис; 3 этаж</address>
-  <span class="btn btn-second text-18 w-max p-1" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Privacy policy</span>
-  <span class="text-18">
-    Разработка: <a class="underline w-max" href="https://stdkit.ru/" target="_blank">Студия К.И.Т.</a>
-  </span>
-</footer> -->
+<footer class="container flex flex-wrap items-center justify-between gap-4 md:gap-10 lg:gap-24 bg-grey md:bg-white bg-opacity-20 py-3">
+  <div class="flex items-center md:mr-auto">
+    <div class="pack pack-box bg-grey rounded-max w-8 mr-3">
+      <picture>
+        <source srcset="img/pictures/director.webp" type="image/webp">
+        <img class="image" src="img/pictures/director.png" alt="">
+      </picture>
+    </div>
+    <p class="font-medium text-16 leading-2">
+      <span class="opacity-60">Главный врач:</span> Трофимов Андрей Евгеньевич
+    </p>
+  </div>
+  <div class="flex items-center">
+    <span class="font-normal text-16 leading-1 mr-2">Разработка:</span>
+    <a class="btn btn-second rounded-1 p-2" data-waved="dark" href="https://stdkit.ru/" target="_blank">
+      <img class="w-24" src="img/pictures/stdkit.svg" alt="">
+    </a>
+  </div>
+  <span class="font-normal text-16">© 2023</span>
+</footer>
 
 </body>
 

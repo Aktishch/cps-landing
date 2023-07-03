@@ -1,6 +1,4 @@
 import { Fancybox } from '@fancyapps/ui'
-import airDatepicker from './air-datepicker'
-import filter from './filter'
 import waved from './waved'
 
 declare global {
@@ -24,18 +22,6 @@ const init = (): void => {
 
     on: {
       done: (): void => {
-        waved.init()
-      },
-    },
-  })
-
-  window.Fancybox.bind('[data-fancybox-calendar]', {
-    dragToClose: false,
-
-    on: {
-      done: (): void => {
-        airDatepicker.init()
-        filter.init()
         waved.init()
       },
     },
@@ -71,7 +57,7 @@ const preloader = (): void => {
   window.Fancybox.show(
     [
       {
-        src: './dialogs/dialog-preloader.html',
+        src: './dialogs/dialog-preloader.php',
         type: 'ajax',
       },
     ],
@@ -84,27 +70,4 @@ const preloader = (): void => {
   )
 }
 
-const warning = (): void => {
-  window.Fancybox.show(
-    [
-      {
-        src: './dialogs/dialog-warning.html',
-        type: 'ajax',
-      },
-    ],
-
-    {
-      dragToClose: false,
-      closeButton: false,
-      backdropClick: true,
-
-      on: {
-        done: (): void => {
-          waved.init()
-        },
-      },
-    }
-  )
-}
-
-export default { init, open, close, preloader, warning }
+export default { init, open, close, preloader }

@@ -52,7 +52,7 @@
         <h3 class="font-bold text-16 sm:text-18 lg:text-20 leading-2">Получите бесплатную консультацию и подробный план лечения</h3>
       </div>
       <form class="form xs:flex-row xs:items-center xs:justify-between gap-5 xs:gap-3 mb-4 duration-5 delay-3 ease-in-out anim anim--up" data-form="submit" data-anim="hidden">
-        <input type="hidden" value="Главная" name="theme">
+        <input type="hidden" value="Получите бесплатную консультацию и подробный план лечения" name="theme">
         <label class="form-label w-full" data-label="input">
           <div class="form-wrapper">
             <div class="input-cover">
@@ -63,7 +63,7 @@
         </label>
         <button class="btn btn-primary btn-lg btn-fill" data-waved="light" type="submit">Отправить</button>
       </form>
-      <div class="font-normal text-14 leading-3 cursor-pointer duration-5 delay-3 ease-in-out anim anim--up" data-anim="hidden">
+      <div class="font-normal text-12 sm:text-14 leading-3 cursor-pointer xs:w-max duration-5 delay-3 ease-in-out anim anim--up" data-anim="hidden" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
         <span class="opacity-60">Отправляя форму, вы даете свое <br> согласие</span> <span class="underline underline-offset-4">на обработку персональных данных</span>
       </div>
     </div>
@@ -121,6 +121,175 @@
     </button>
   </div>
 </main>
+
+<!-- Квиз -->
+
+<section class="quiz container overflow-hidden">
+  <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Ответьте на несколько простых вопросов</h2>
+  <form class="form duration-5 ease-in-out anim anim--up" data-form="quiz" data-anim="hidden">
+    <input type="hidden" value="Квиз" name="theme">
+    <div class="card rounded-3 sm:rounded-6 overflow-visible p-5 md:p-8 xl:p-4">
+      <div class="card-content flex-row items-center justify-between gap-10">
+        <div class="w-full lg:max-w-[380px] xl:max-w-[520px] xl:pl-6">
+          <div class="hidden flex-col items-center justify-center" data-form-submit>
+            <svg class="lg:hidden text-primary icon text-[16rem]">
+              <use xlink:href="img/icons.svg#success">
+            </svg>
+            <h3 class="font-bold text-center lg:text-left text-20 xl:text-24 leading-2">
+              Спасибо, данные успешно отправлены. <br> Мы перезвоним вам в течение 30 минут!
+            </h3>
+          </div>
+          <div data-form-quiz>
+            <p class="font-normal text-16 xl:text-18 leading-2 mb-4">Получите бесплатный расчет по вашей клинической ситуации</p>
+            <div class="quiz-slider flex flex-col" data-quiz="stop">
+              <div class="swiper w-full xl:max-w-[420px] mx-0">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide h-full" data-quiz-slide>
+                    <h3 class="font-semibold text-20 xl:text-24 leading-2 mb-6 xl:mb-8">Для выбора оптимальной программы нам необходимо знать ваш возраст</h3>
+                    <div class="flex flex-col gap-2">
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="30-45 лет" name="age">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">30-45 лет</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="46-55 лет" name="age">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">46-55 лет</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="56-65 лет" name="age">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">56-65 лет</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="66 и старше" name="age">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">66 и старше</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="swiper-slide h-full" data-quiz-slide>
+                    <h3 class="font-semibold text-20 xl:text-24 leading-2 mb-6 xl:mb-8">Сколько зубов необходимо восстановить?</h3>
+                    <div class="flex flex-col gap-2">
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="1 зуб" name="quantity-teeth">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">1 зуб</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="2 зуба" name="quantity-teeth">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">2 зуба</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="3 зуба" name="quantity-teeth">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">3 зуба</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="4 и более" name="quantity-teeth">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">4 и более</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="swiper-slide h-full" data-quiz-slide>
+                    <h3 class="font-semibold text-20 xl:text-24 leading-2 mb-6 xl:mb-8">Какие зубы необходимо восстановить?</h3>
+                    <div class="flex flex-col gap-2">
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="Передние" name="teeth">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">Передние</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="Жевательные" name="teeth">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">Жевательные</span>
+                      </label>
+                      <label class="flex items-center relative bg-grey bg-opacity-80 rounded-3 cursor-pointer px-4 h-14" data-waved="dark">
+                        <input class="quiz__switch switch switch--radio mr-3" type="radio" value="И те и другие" name="teeth">
+                        <span class="quiz__text font-normal text-16 leading-1 pointer-events-none">И те и другие</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="swiper-slide h-full" data-quiz-slide>
+                    <h3 class="font-semibold text-20 xl:text-24 leading-2 mb-6 xl:mb-8">Когда вам удобно прийти на консультацию?</h3>
+                    <label class="form-label mb-5" data-label="input">
+                      <div class="form-wrapper">
+                        <div class="input-cover">
+                          <input class="input input-grey input-lg bg-grey pl-12" data-input="calendar" type="text" placeholder="_ _ . _ _ . _ _ _" name="calendar">
+                        </div>
+                        <div class="form-icon form-icon--left text-24 opacity-20">
+                          <svg class="icon">
+                            <use xlink:href="img/icons.svg#calendar">
+                          </svg>
+                        </div>
+                        <span class="form-error" data-error>Пожалуйста, укажите дату!</span>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="swiper-slide h-full" data-quiz-slide>
+                    <h3 class="font-semibold text-20 xl:text-24 leading-2 mb-6 xl:mb-8">Оставьте свои контакты, чтобы мы могли связаться с вами</h3>
+                    <label class="form-label mb-5" data-label="input">
+                      <div class="form-wrapper">
+                        <div class="input-cover">
+                          <input class="input input-grey input-lg bg-grey pl-12" data-input="name" type="text" placeholder="Введите имя" name="name">
+                        </div>
+                        <div class="form-icon form-icon--left text-24 opacity-20">
+                          <svg class="icon">
+                            <use xlink:href="img/icons.svg#user">
+                          </svg>
+                        </div>
+                        <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+                      </div>
+                    </label>
+                    <label class="form-label mb-5" data-label="input">
+                      <div class="form-wrapper">
+                        <div class="input-cover">
+                          <input class="input input-grey input-lg bg-grey pl-12" data-input="tel" type="tel" placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _" name="tel">
+                        </div>
+                        <div class="form-icon form-icon--left text-24 opacity-20">
+                          <svg class="icon">
+                            <use xlink:href="img/icons.svg#tel">
+                          </svg>
+                        </div>
+                        <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-5 md:mt-10">
+                <div class="quiz-slider-btns flex items-center gap-2 xs:gap-4">
+                  <button class="swiper-button-prev btn btn-gray btn-lg btn-contur btn-light inset-0 text-black w-auto mt-0" data-waved="dark">
+                    <svg class="icon hidden xs:block text-12 mr-2">
+                      <use xlink:href="img/icons.svg#arrow-left">
+                    </svg>
+                    Назад
+                  </button>
+                  <button class="swiper-button-next btn btn-primary btn-lg btn-fill inset-0 w-auto mt-0" data-waved="light">
+                    Следующий
+                    <svg class="icon hidden xs:block text-12 ml-2">
+                      <use xlink:href="img/icons.svg#arrow-right">
+                    </svg>
+                  </button>
+                </div>
+                <div class="quiz-slider-submit hidden flex-col xl:flex-row xl:items-center gap-4 xl:gap-6">
+                  <button class="btn btn-primary btn-lg btn-fill" data-waved="light" type="submit">Отправить</button>
+                  <div class="font-normal text-12 sm:text-14 leading-3 cursor-pointer xs:w-max" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
+                    <span class="opacity-60">Отправляя форму, вы даете свое <br> согласие</span> <span class="underline underline-offset-4">на обработку персональных данных</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pack pack-box hidden lg:block bg-second bg-opacity-20 rounded-3 sm:rounded-6 border border-solid border-grey overflow-visible pointer-events-none w-full max-w-[550px]">
+          <div class="hidden items-center justify-center absolute inset-0" data-form-success>
+            <svg class="text-primary icon text-[19rem]">
+              <use xlink:href="img/icons.svg#success">
+            </svg>
+          </div>
+          <picture>
+            <source srcset="img/pictures/woman.webp" type="image/webp">
+            <img class="absolute bottom-0 right-0 min-w-[580px] xl:min-w-[810px]" data-form-image loading="lazy" src="img/pictures/woman.png" alt="">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
 
 <!-- Цены -->
 
@@ -202,7 +371,7 @@
               <b class="text-14 sm:text-16 leading-1 min-w-max">214 500 ₽</b>
             </div>
           </div>
-          <button class="btn btn-primary btn-lg btn-fill w-full xs:w-max" data-waved="light">Записаться на консультацию</button>
+          <button class="btn btn-primary btn-lg btn-fill w-full xs:w-max" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Записаться на консультацию</button>
         </div>
       </div>
     </div>
@@ -370,7 +539,7 @@
   <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Этапы</h2>
   <div class="flex flex-col gap-8">
     <% for (var i = 0; i < stages.length; i++) { %>
-    <div class="sticky top-0 left-0 right-0 duration-5 ease-in-out anim anim--up" data-anim="hidden">
+    <div class="duration-5 ease-in-out anim anim--up" data-anim="hidden">
       <div class="card rounded-3 sm:rounded-6 p-4" data-waved="dark">
         <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-10">
           <div class="pack pack-box bg-grey rounded-3 w-full max-w-[120px]">
@@ -397,4 +566,118 @@
   </div>
 </section>
 
-<%= require('./includes/footer.html').default %>
+<!-- Возможности -->
+
+<% var opportunities = [
+  {
+    delay: '',
+    img: 'opportunities-1',
+    title: 'Комфморт',
+    text: 'Рентген не вставая с кресла. Наши кабинеты оборудованы рентгеновским оборудованием, которое позволяет получить диагностические изображения непосредственно во время вашего визита'
+  },
+  {
+    delay: 'xl:delay-2',
+    img: 'opportunities-2',
+    title: 'Удобство',
+    text: 'Временная коронка сразу после установки импланта. Позволяет получить временную замену зуба, пока окончательная коронка изготавливается в нашей зуботехнической лаборатории'
+  },
+  {
+    delay: 'xl:delay-4',
+    img: 'opportunities-3',
+    title: 'Качество',
+    text: 'Наличие полноценной зуботехнической лаборатории на базе клиники — важнейшее условие для качественного лечения, результат которого мы можем вам гарантировать'
+  }
+] %>
+
+<section class="opportunities container container--xs bg-white" id="opportunities">
+  <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Наши возможности</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-8">
+    <% for (var i = 0; i < opportunities.length; i++) { %>
+    <div class="sticky sm:static top-0 left-0 right-0 duration-5 <%= opportunities[i].delay %> ease-in-out anim anim--right" data-anim="hidden">
+      <div class="card rounded-3 sm:rounded-6 h-full p-2 xl:p-4" data-waved="dark">
+        <div class="pack pack-rect-md bg-grey rounded-3 sm:rounded-6">
+          <div class="loader">
+            <span class="loader-progress">
+              <svg class="loader-icon icon">
+                <use xlink:href="img/icons.svg#loader">
+              </svg>
+            </span>
+          </div>
+          <picture>
+            <source srcset="img/pictures/<%= opportunities[i].img %>.webp" type="image/webp">
+            <img class="image image-rise" loading="lazy" src="img/pictures/<%= opportunities[i].img %>.jpg" alt="">
+          </picture>
+        </div>
+        <div class="card-content py-4 xl:py-6 px-2 xl:px-4">
+          <div class="flex items-center text-20 sm:text-24 mb-2">
+            <svg class="icon text-primary mr-2">
+              <use xlink:href="img/icons.svg#check">
+            </svg>
+            <h4 class="font-semibold leading-1"><%= opportunities[i].title %></h4>
+          </div>
+          <p class="font-medium text-16 leading-3"><%= opportunities[i].text %></p>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Консультация -->
+
+<section class="consultation container relative xl:min-h-[710px]">
+  <div class="consultation__bg hidden sm:block absolute inset-0 overflow-hidden">
+    <div class="pack blur-lg w-full h-full">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/room.webp" type="image/webp">
+        <img class="image" loading="lazy" src="img/pictures/room.jpg" alt="">
+      </picture>
+    </div>
+    <div class="absolute inset-0 bg-white bg-opacity-30"></div>
+  </div>
+  <picture>
+    <source srcset="img/pictures/doctor.webp" type="image/webp">
+    <img class="hidden xl:block absolute bottom-0 left-[60%] max-[1600px]:left-[50%] w-full max-w-[600px] duration-5 ease-in-out anim anim--fade" data-anim="hidden" src="img/pictures/doctor.png" alt="">
+  </picture>
+  <div class="relative w-full xl:max-w-[730px]">
+    <h2 class="font-bold text-primary text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--right" data-anim="hidden">
+      Запишитесь к нам на консультацию <span class="hidden sm:inline">стоматолога-имплантолога</span>
+    </h2>
+    <div class="duration-5 ease-in-out anim anim--right" data-anim="hidden">
+      <div class="card rounded-3 sm:rounded-6 p-5 md:p-10">
+        <div class="card-content">
+          <h3 class="font-semibold text-24 leading-2 mb-5">
+            Получите консультацию <br class="sm:hidden"> <span class="text-primary">в течение 15 минут</span>
+          </h3>
+          <p class="font-normal text-16 leading-3 mb-8">
+            Не откладывайте важные вопросы о здоровье зубов — обратитесь к нам сегодня и получите быструю консультацию от наших экспертов.
+          </p>
+          <form class="form xs:flex-row xs:items-center xs:justify-between gap-6 xs:gap-4 w-full max-w-[600px] xl:max-w-full mb-4" data-form="submit">
+            <input type="hidden" value="Консультация в течение 15 минут" name="theme">
+            <label class="form-label xl:flex-grow-[3] w-full xl:w-auto" data-label="input">
+              <div class="form-wrapper">
+                <div class="input-cover">
+                  <input class="input input-gray input-lg" data-input="tel" type="tel" placeholder="+7 (_ _ _) _ _ _ - _ _ - _ _" name="tel">
+                </div>
+                <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+              </div>
+            </label>
+            <button class="btn btn-primary btn-lg btn-fill xl:flex-grow" data-waved="light" type="submit">Отправить</button>
+          </form>
+          <div class="font-normal text-12 sm:text-14 leading-3 cursor-pointer xs:w-max" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">
+            <span class="opacity-60">Отправляя форму, вы даете свое <br> согласие</span> <span class="underline underline-offset-4">на обработку персональных данных</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= _.template(require('./includes/footer.html').default)({data, social}) %>

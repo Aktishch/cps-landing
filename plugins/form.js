@@ -24,7 +24,7 @@ module.exports = plugin(({ addComponents, theme }) => {
         position: 'absolute',
         top: 0,
         bottom: 0,
-        width: '40px',
+        width: '48px',
         height: '100%',
         pointerEvents: 'none',
 

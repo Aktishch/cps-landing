@@ -80,17 +80,25 @@
 }
 
 // Квиз
-// .quiz {
-//   &-slider {
-//     &[data-quiz="stop"] .swiper-button-next {
-//       @apply opacity-50 pointer-events-none;
-//     }
+.quiz {
+  &-slider {
+    &[data-quiz="stop"] .swiper-button-next {
+      @apply opacity-50 pointer-events-none;
+    }
 
-//     &[data-quiz-end] &-bottom {
-//       @apply invisible opacity-0;
-//     }
-//   }
-// }
+    &[data-quiz-end] &-btns {
+      @apply hidden;
+    }
+
+    &[data-quiz-end] &-submit {
+      @apply flex;
+    }
+  }
+
+  &__switch:checked+&__text {
+    @apply font-semibold;
+  }
+}
 
 // Цены
 .price {
@@ -100,4 +108,20 @@
 // Результат
 .result {
   background-image: linear-gradient(0deg, rgba(195, 223, 255, 0.15) 0%, rgba(195, 223, 255, 0.15) 100%);
+}
+
+// Возможности
+.opportunities {
+  background-image: linear-gradient(0deg, rgba(196, 223, 255, 0.15), rgba(196, 223, 255, 0.15));
+}
+
+// Консультация
+.consultation {
+  &__bg {
+    &::after {
+      background-image: linear-gradient(180deg, #F6FAFF 0%, rgba(246, 250, 255, 0.00) 100%);
+
+      @apply content-auto absolute inset-0;
+    }
+  }
 }

@@ -10,6 +10,7 @@ module.exports = plugin(({ addComponents, theme }) => {
       position: 'relative',
       userSelect: 'none',
       color: theme('colors.primary.DEFAULT'),
+      backgroundColor: theme('colors.white.DEFAULT'),
       border: `1px solid ${theme('colors.gray.DEFAULT')}`,
       transition: '0.2s linear',
       appearance: 'none',

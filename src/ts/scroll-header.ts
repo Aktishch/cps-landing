@@ -19,18 +19,6 @@ const init = (): void => {
   }
 
   document.addEventListener('scroll', scrollHeader as EventListener)
-
-  const smoothWrapper = document.querySelector('#smooth-wrapper') as HTMLElement
-
-  if (smoothWrapper) {
-    const wrapperResize = (): void => {
-      smoothWrapper.style.paddingTop = `${header.offsetHeight}px`
-    }
-
-    wrapperResize()
-
-    window.addEventListener('resize', wrapperResize as EventListener)
-  }
 }
 
 export default { init }

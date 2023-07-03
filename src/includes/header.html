@@ -74,7 +74,7 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-primary btn-md sm:btn-lg btn-contur btn-swipe text-black" data-waved="light">
+    <button class="btn btn-primary btn-md sm:btn-lg btn-contur btn-swipe text-black" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">
       <span class="hidden sm:block">Записаться на консультацию</span>
       <span class="sm:hidden">Консультация</span>
     </button>
@@ -117,7 +117,7 @@
 
   <!-- Меню -->
 
-  <div class="menu fixed inset-0 z-6 duration-1" data-sidebar="close" data-sidebar-resize="lg" id="menu">
+  <div class="menu fixed inset-0 z-6 duration-1" data-sidebar="close" data-sidebar-resize="xl" id="menu">
     <div class="menu__content flex flex-col bg-white bg-opacity-90 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
       <div class="menu__head flex items-center border-b border-solid border-grey p-4 duration-5 delay-3">
         <button class="btn btn-primary text-24 p-1 mr-10" data-sidebar-close="menu" data-waved="light">
@@ -136,7 +136,7 @@
           <a class="btn btn-primary font-normal text-black text-20" data-scroll data-waved="light" href="<%= nav[i].id %>"><%= nav[i].text %></a>
           <% } %>
         </div>
-        <button class="btn btn-primary btn-md btn-fill" data-waved="light">Записаться на консультацию</button>
+        <button class="btn btn-primary btn-md btn-fill" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Записаться на консультацию</button>
       </div>
       <div class="menu__footer mt-auto px-4 pt-4 pb-10 duration-5 delay-9">
         <div class="flex flex-col gap-5 mb-10">
@@ -176,7 +176,7 @@
         </div>
         <div class="flex items-center gap-4">
           <% for (var i = 0; i < social.length; i++) { %>
-          <a class="btn btn-primary" href="" target="_blank">
+          <a class="btn btn-primary rounded-1" href="" target="_blank">
             <img class="icon text-38" src="<%= social[i] %>" alt="">
           </a>
           <% } %>
