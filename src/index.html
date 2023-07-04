@@ -29,7 +29,7 @@
 ] %>
 
 <main class="main container lg:flex lg:items-center relative bg-second bg-opacity-20 overflow-hidden lg:min-h-[750px] xl:py-0">
-  <div class="main-images hidden xl:block absolute top-0 bottom-0 xxl:left-1/2 right-1/4 w-full max-w-[540px] h-full">
+  <div class="main-images hidden xl:block absolute top-0 bottom-0 xxl:left-1/2 right-[23%] w-full max-w-[540px] h-full">
     <div class="swiper h-full">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < 4; i++) { %>
@@ -85,7 +85,7 @@
       <div class="swiper-wrapper">
         <% for (var i = 0; i < 4; i++) { %>
         <div class="swiper-slide h-auto">
-          <div class="card card--active bg-white bg-opacity-70 backdrop-blur-xl rounded-6 h-full py-5 sm:py-7 lg:py-12 px-4 sm:px-6 lg:px-10">
+          <div class="card card--active bg-white bg-opacity-50 backdrop-blur-xl rounded-6 border-none h-full py-5 sm:py-7 lg:py-12 px-4 sm:px-6 lg:px-8">
             <div class="card-content items-center justify-center text-center h-full">
               <img class="icon text-6xl mb-5 lg:mb-8" src="img/pictures/logo.svg" alt="">
               <h4 class="font-semibold text-20 lg:text-24 leading-2 mb-2 sm:mb-4">Трофимов Андрей Евгеньевич</h4>
@@ -109,12 +109,12 @@
       </div>
     </div>
     <div class="swiper-pagination md:hidden text-black mt-8"></div>
-    <button class="swiper-button-prev btn btn-black btn-light hidden md:flex absolute -left-6 rounded-max shadow-md w-12 h-12" data-waved="dark">
+    <button class="swiper-button-prev btn btn-white btn-fill hover:bg-grey text-black hidden md:flex absolute -left-6 rounded-max shadow-md w-12 h-12" data-waved="dark">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-left">
       </svg>
     </button>
-    <button class="swiper-button-next btn btn-black btn-light hidden md:flex absolute -right-6 rounded-max shadow-md w-12 h-12" data-waved="dark">
+    <button class="swiper-button-next btn btn-white btn-fill hover:bg-grey text-black hidden md:flex absolute -right-6 rounded-max shadow-md w-12 h-12" data-waved="dark">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-right">
       </svg>
@@ -275,7 +275,7 @@
             </div>
           </div>
         </div>
-        <div class="pack pack-box hidden lg:block bg-second bg-opacity-20 rounded-3 sm:rounded-6 border border-solid border-grey overflow-visible pointer-events-none w-full max-w-[550px]">
+        <div class="pack pack-box xl:pack-[95] hidden lg:block bg-second bg-opacity-20 rounded-3 sm:rounded-6 border border-solid border-grey overflow-visible pointer-events-none w-full max-w-[550px]">
           <div class="hidden items-center justify-center absolute inset-0" data-form-success>
             <svg class="text-primary icon text-[19rem]">
               <use xlink:href="img/icons.svg#success">
@@ -283,7 +283,7 @@
           </div>
           <picture>
             <source srcset="img/pictures/woman.webp" type="image/webp">
-            <img class="absolute bottom-0 right-0 min-w-[580px] xl:min-w-[810px]" data-form-image loading="lazy" src="img/pictures/woman.png" alt="">
+            <img class="absolute bottom-0 right-0 min-w-[580px] xl:min-w-[780px]" data-form-image loading="lazy" src="img/pictures/woman.png" alt="">
           </picture>
         </div>
       </div>
@@ -319,7 +319,7 @@
 <section class="price container bg-white overflow-hidden" id="price">
   <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Имплантационные системы и цены</h2>
   <div class="duration-5 ease-in-out anim anim--right" data-anim="hidden">
-    <div class="card rounded-3 sm:rounded-6 py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
+    <div class="card rounded-3 sm:rounded-6 border-none py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
       <div class="pack pack-sheet hidden lg:block absolute bottom-0 right-0 opacity-40 xl:opacity-100 w-full max-w-[580px]">
         <div class="loader">
           <span class="loader-progress">
@@ -492,12 +492,12 @@
       </div>
     </div>
     <div class="swiper-pagination text-black mt-8"></div>
-    <button class="swiper-button-prev btn btn-black btn-light hidden md:flex absolute -left-6 xl:-left-16 rounded-max shadow-md w-14 h-14" data-waved="dark">
+    <button class="swiper-button-prev btn btn-white btn-fill hover:bg-grey text-black hidden md:flex absolute -left-6 xl:-left-16 rounded-max shadow-md w-14 h-14" data-waved="dark">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-left">
       </svg>
     </button>
-    <button class="swiper-button-next btn btn-black btn-light hidden md:flex absolute -right-6 xl:-right-16 rounded-max shadow-md w-14 h-14" data-waved="dark">
+    <button class="swiper-button-next btn btn-white btn-fill hover:bg-grey text-black hidden md:flex absolute -right-6 xl:-right-16 rounded-max shadow-md w-14 h-14" data-waved="dark">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-right">
       </svg>
@@ -594,7 +594,7 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-8">
     <% for (var i = 0; i < opportunities.length; i++) { %>
     <div class="sticky sm:static top-0 left-0 right-0 duration-5 <%= opportunities[i].delay %> ease-in-out anim anim--right" data-anim="hidden">
-      <div class="card rounded-3 sm:rounded-6 h-full p-2 xl:p-4" data-waved="dark">
+      <div class="card rounded-3 sm:rounded-6 border-none shadow-sm h-full p-2 xl:p-4" data-waved="dark">
         <div class="pack pack-rect-md bg-grey rounded-3 sm:rounded-6">
           <div class="loader">
             <span class="loader-progress">
