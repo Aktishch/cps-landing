@@ -293,34 +293,11 @@
 
 <!-- Цены -->
 
-<% var price = [
-  {
-    icon: 'img/pictures/us.svg',
-    text: 'Nobel Biocare (4 шт.)',
-    value: '299 200 ₽'
-  },
-  {
-    icon: 'img/pictures/sw.svg',
-    text: 'Straumann (4 шт.)',
-    value: '242 000 ₽'
-  },
-  {
-    icon: 'img/pictures/kr.svg',
-    text: 'Dentium (4 шт.)',
-    value: '180 400 ₽'
-  },
-  {
-    icon: 'img/pictures/iz.svg',
-    text: 'Alpha Bio (4 шт.)',
-    value: '136 400 ₽'
-  }
-] %>
-
 <section class="price container bg-white overflow-hidden" id="price">
   <h2 class="font-bold text-34 sm:text-42 leading-2 mb-6 md:mb-10 duration-5 ease-in-out anim anim--up" data-anim="hidden">Имплантационные системы и цены</h2>
-  <div class="duration-5 ease-in-out anim anim--right" data-anim="hidden">
+  <div class="duration-5 ease-in-out anim anim--right" data-filter data-anim="hidden">
     <div class="card rounded-3 sm:rounded-6 border-none py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
-      <div class="pack pack-sheet hidden lg:block absolute bottom-0 right-0 opacity-40 xl:opacity-100 w-full max-w-[580px]">
+      <div class="pack pack-sheet hidden lg:block absolute bottom-0 right-0 opacity-40 xl:opacity-100 w-full max-w-[600px]">
         <div class="loader">
           <span class="loader-progress">
             <svg class="loader-icon icon">
@@ -334,45 +311,63 @@
         </picture>
       </div>
       <div class="card-content relative">
-        <h3 class="font-semibold text-20 sm:text-24 leading-2 mb-5 sm:mb-8">Стоимость одного импланта жевательного или переднего зуба</h3>
-        <div class="w-full lg:max-w-[500px]">
-          <h4 class="font-semibold text-16 leading-2 mb-5">1. Установка 4-х имплантов с мультиюнитами</h4>
-          <div class="flex flex-col gap-3 mb-5 sm:mb-9">
-            <% for (var i = 0; i < price.length; i++) { %>
-            <div class="flex items-end justify-between">
-              <div class="flex items-center min-w-max">
-                <img class="icon text-20 sm:text-24 mr-2 sm:mr-3" src="<%= price[i].icon %>" alt="">
-                <span class="font-normal text-14 sm:text-16 leading-1"><%= price[i].text %></span>
-              </div>
-              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
-              <b class="text-14 sm:text-16 leading-1 min-w-max"><%= price[i].value %></b>
-            </div>
-            <% } %>
-          </div>
-          <h4 class="font-semibold text-16 leading-2 mb-5">2. Временное протезирование</h4>
-          <div class="flex flex-col gap-3 mb-3">
-            <div class="flex items-end justify-between">
-              <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Акриловый протез (временный) <br> с опорой на 4-х имплантах</span>
-              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
-              <b class="text-14 sm:text-16 leading-1 min-w-max">51 700 ₽</b>
-            </div>
-          </div>
-          <p class="font-normal text-14 sm:text-16 leading-2 opacity-60 mb-5 sm:mb-9">Срок эксплуатации временного протеза 4-9 месяцев</p>
-          <h4 class="font-semibold text-16 leading-2 mb-5">3. Постоянное протезирование</h4>
-          <div class="flex flex-col gap-3 mb-5 sm:mb-9">
-            <div class="flex items-end justify-between">
-              <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Акриловый протез с опорой <br class="sm:hidden"> на 4-х имплантах</span>
-              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
-              <b class="text-14 sm:text-16 leading-1 min-w-max">181 500 ₽</b>
-            </div>
-            <div class="flex items-end justify-between">
-              <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Метало-керамический протез <br> с опорой на 4-х имплантах</span>
-              <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
-              <b class="text-14 sm:text-16 leading-1 min-w-max">214 500 ₽</b>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-lg btn-fill w-full xs:w-max" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Записаться на консультацию</button>
+        <p class="font-normal text-14 sm:text-16 lg:text-18 leading-4 opacity-70 mb-6">
+          Уважаемый пациент! Информируем вас о том, что данная имплантационная схема включает в себя все необходимые манипуляции и материалы от установки импланта до фиксации постоянной коронки. В имплантационную схему не входят подготовительные манипуляции, такие как: синуслифтинг, костные и мягкотканные пластики. Цены, указанные в данной имплантационной схеме, действительны на момент составления плана и могут быть изменены в соответствии с прейскурантом, действующим на момент оказания услуги.
+        </p>
+        <h4 class="font-medium text-16 leading-1 mb-3">Выберите производителя</h4>
+        <div class="flex items-center gap-3 overflow-auto sm:overflow-visible px-4 sm:px-0 -mx-4 sm:mx-0 mb-5 md:mb-8">
+          <% for (var i = 0; i < 4; i++) { %>
+          <button class="price__category <%= i == 0 ? 'filter-active' : '' %> btn btn-primary btn-md bg-grey bg-opacity-80 rounded-2 border border-solid border-grey border-opacity-0 min-w-max p-3" data-filter-category="category-<%= i %>" data-waved="dark">
+            <picture>
+              <source srcset="img/pictures/price-<%= i + 1 %>.webp" type="image/webp">
+              <img class="block opacity-40 w-max duration-3" src="img/pictures/price-<%= i + 1 %>.png" alt="">
+            </picture>
+          </button>
+          <% } %>
         </div>
+        <div class="w-full max-w-[490px] mb-7 sm:mb-10">
+          <% for (var i = 0; i < 4; i++) { %>
+          <div class="price__card <%= i != 0 ? 'hidden' : '' %>" data-filter-card="category-<%= i %>">
+            <div class="flex items-center mb-5">
+              <div class="flex items-center gap-1 mr-2 sm:mr-3">
+                <img class="icon text-20 sm:text-24" src="img/pictures/sw.svg" alt="">
+                <img class="icon text-20 sm:text-24" src="img/pictures/iz.svg" alt="">
+              </div>
+              <h3 class="font-semibold text-16 leading-1">Импланты Alpha Bio</h3>
+            </div>
+            <div class="flex flex-col gap-3 mb-5">
+              <div class="flex items-end justify-between">
+                <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Имлантация</span>
+                <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+                <b class="text-14 sm:text-16 leading-1 min-w-max">23 100 ₽</b>
+              </div>
+              <div class="flex items-end justify-between">
+                <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Формирователь десны</span>
+                <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+                <b class="text-14 sm:text-16 leading-1 min-w-max">3 300 ₽</b>
+              </div>
+              <div class="flex items-end justify-between">
+                <span class="font-normal text-14 sm:text-16 leading-1 opacity-60 min-w-max">Провизорная коронка <br class="sm:hidden"> (срок от 1 месяца)</span>
+                <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+                <b class="font-normal text-14 sm:text-16 leading-1 opacity-60 min-w-max">4-6 месяцев</b>
+              </div>
+              <div class="flex items-end justify-between">
+                <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">Формирователь десны</span>
+                <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+                <b class="text-14 sm:text-16 leading-1 min-w-max">3 300 ₽</b>
+              </div>
+              <div class="font-normal text-14 sm:text-16 leading-1">Постоянная коронка (одна на выбор):</div>
+              <div class="flex items-end justify-between">
+                <span class="font-normal text-14 sm:text-16 leading-1 min-w-max">— Цельнокерамическая коронка «Эксклюзив»</span>
+                <span class="border-b border-dashed border-black border-opacity-40 w-full"></span>
+                <b class="text-14 sm:text-16 leading-1 min-w-max">52 800 ₽</b>
+              </div>
+            </div>
+            <div class="font-semibold text-18 sm:text-20 leading-1">Итого: от 69 400 до 96 100 ₽</div>
+          </div>
+          <% } %>
+        </div>
+        <button class="btn btn-primary btn-lg btn-fill w-full xs:w-max" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Записаться на консультацию</button>
       </div>
     </div>
   </div>
@@ -457,7 +452,7 @@
         <div class="swiper-slide h-auto">
           <div class="card rounded-3 sm:rounded-6 shadow-none p-3 lg:p-6">
             <div class="card-content md:flex-row md:items-center md:justify-between gap-3 lg:gap-6">
-              <div class="pack pack-rect-md xs:pack-rect-sm md:pack-rect-md flex-grow bg-grey rounded-s-3 md:rounded-s-6 rounded-e-3 md:rounded-e-none">
+              <div class="pack pack-rect-lg xs:pack-rect-sm md:pack-rect-md flex-grow bg-grey rounded-s-3 md:rounded-s-6 rounded-e-3 md:rounded-e-none" data-medical>
                 <div class="loader">
                   <span class="loader-progress">
                     <svg class="loader-icon icon">
@@ -467,11 +462,15 @@
                 </div>
                 <picture>
                   <source srcset="img/pictures/result-before.webp" type="image/webp">
-                  <img class="image image-rise" loading="lazy" src="img/pictures/result-before.jpg" alt="">
+                  <img class="image blur-2xl" data-medical-image loading="lazy" src="img/pictures/result-before.jpg" alt="">
                 </picture>
-                <div class="flex items-center justify-center absolute bottom-3 lg:bottom-6 left-3 lg:left-6 bg-white font-semibold text-center text-black text-16 sm:text-20 leading-1 rounded-3 sm:rounded-6 w-14 sm:w-24 h-14 sm:h-24" data-waved="dark">До</div>
+                <div class="flex flex-col items-center justify-center absolute inset-0 text-center text-white rounded-s-3 md:rounded-s-6 rounded-e-3 md:rounded-e-none p-4" data-medical-content>
+                  <p class="font-semibold text-16 sm:text-20 lg:text-24 leading-2 mb-5 sm:mb-8">Эта фотография содержит <br> медицинский контент</p>
+                  <button class="btn btn-white btn-md sm:btn-lg btn-contur text-14 sm:text-16" data-medical-button data-waved="light">Смотреть фото</button>
+                </div>
+                <div class="flex items-center justify-center absolute bottom-2 lg:bottom-6 left-2 lg:left-6 bg-white font-semibold text-center text-black text-16 lg:text-20 leading-1 rounded-3 lg:rounded-6 w-14 lg:w-24 h-14 lg:h-24" data-waved="dark">До</div>
               </div>
-              <div class="pack pack-rect-md xs:pack-rect-sm md:pack-rect-md flex-grow bg-grey rounded-s-3 md:rounded-s-none rounded-e-3 md:rounded-e-6">
+              <div class="pack pack-rect-lg xs:pack-rect-sm md:pack-rect-md flex-grow bg-grey rounded-s-3 md:rounded-s-none rounded-e-3 md:rounded-e-6">
                 <div class="loader">
                   <span class="loader-progress">
                     <svg class="loader-icon icon">
@@ -481,9 +480,9 @@
                 </div>
                 <picture>
                   <source srcset="img/pictures/result-after.webp" type="image/webp">
-                  <img class="image image-rise" loading="lazy" src="img/pictures/result-after.jpg" alt="">
+                  <img class="image" loading="lazy" src="img/pictures/result-after.jpg" alt="">
                 </picture>
-                <div class="flex items-center justify-center absolute bottom-3 lg:bottom-6 left-3 lg:left-6 bg-primary font-semibold text-center text-white text-16 sm:text-20 leading-1 rounded-3 sm:rounded-6 w-14 sm:w-24 h-14 sm:h-24" data-waved="light">После</div>
+                <div class="flex items-center justify-center absolute bottom-2 lg:bottom-6 left-2 lg:left-6 bg-primary font-semibold text-center text-white text-16 lg:text-20 leading-1 rounded-3 lg:rounded-6 w-14 lg:w-24 h-14 lg:h-24" data-waved="light">После</div>
               </div>
             </div>
           </div>

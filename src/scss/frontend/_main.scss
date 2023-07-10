@@ -103,6 +103,38 @@
 // Цены
 .price {
   background-image: linear-gradient(0deg, rgba(195, 223, 255, 0.40) 0%, rgba(195, 223, 255, 0.40) 100%);
+
+  &__category {
+    &:active {
+      transform: none;
+    }
+
+    &.filter-active {
+      @apply btn-fade btn-contur pointer-events-none;
+
+      & img {
+        @apply opacity-100;
+      }
+    }
+  }
+
+  &__card.filter-show {
+    animation: filtering-show 0.3s ease both 1;
+  }
+}
+
+@keyframes filtering-show {
+  0% {
+    transform: translateY(50px);
+
+    @apply opacity-0;
+  }
+
+  100% {
+    transform: translateY(0);
+
+    @apply opacity-100;
+  }
 }
 
 // Результат

@@ -10,9 +10,11 @@ import scrollTo from './ts/scroll-to'
 import animation from './ts/animation'
 import waved from './ts/waved'
 import formSubmit from './ts/form-submit'
+import filter from './ts/filter'
 import inputs from './ts/inputs'
 import maskTel from './ts/mask-tel'
 import quiz from './ts/quiz'
+import medical from './ts/medical'
 import preloader from './ts/preloader'
 
 // Style
@@ -31,8 +33,10 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   animation.init()
   waved.init()
   formSubmit.init()
+  filter.init()
   inputs.init()
   maskTel.init()
   quiz.init()
+  medical.init()
   preloader.init()
 }) as EventListener)
