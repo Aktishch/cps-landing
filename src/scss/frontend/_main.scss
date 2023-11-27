@@ -1,9 +1,81 @@
+// Новогодняя тема
+.theme-new-year {
+  .header {
+    &__btn {
+      &::before {
+        @apply block;
+      }
+    }
+
+    &__logo {
+      @apply invisible;
+    }
+
+    &__square {
+      background-image: url('../img/pictures/snowflakes.svg');
+    }
+  }
+
+  .nav {
+    &__item {
+      &:not(:last-child) {
+        &::after {
+          animation: progress 7s linear infinite;
+
+          @apply block;
+        }
+      }
+    }
+  }
+
+  .main {
+    &__tree {
+      @screen lg {
+        @apply block;
+      }
+    }
+  }
+}
+
 // Шапка документа
 .header {
   transform: translateY(var(--top));
 
   @screen xl {
     transform: none;
+  }
+
+  &__btn {
+    &::before {
+      background-image: url('../img/pictures/christmas-circle.png');
+
+      @apply content-auto hidden absolute -top-4 -left-5 bg-no-repeat bg-contain w-24 h-24;
+
+      @screen md {
+        @apply -left-10 w-32 h-32;
+      }
+
+      @screen xl {
+        @apply -top-6 pointer-events-none;
+      }
+    }
+  }
+
+  &__square {
+    @apply bg-no-repeat bg-cover;
+  }
+}
+
+// Навигация
+.nav {
+  &__item {
+    &:not(:last-child) {
+      &::after {
+        background-image: url('../img/pictures/snowflake.svg');
+
+        @apply content-auto hidden absolute top-0 bottom-0 -right-16 pointer-events-none w-5 h-5 my-auto;
+      }
+    }
   }
 }
 

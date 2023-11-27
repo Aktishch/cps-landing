@@ -3,8 +3,9 @@ import fancybox from './ts/fancybox'
 import sliderSwiper from './ts/slider-swiper'
 import yandexMap from './ts/yandex-map'
 import airDatepicker from './ts/air-datepicker'
-import scrollHeader from './ts/scroll-header'
+import themeNewYear from './ts/theme-new-year'
 import currentTab from './ts/current-tab'
+import scrollHeader from './ts/scroll-header'
 import sidebar from './ts/sidebar'
 import scrollTo from './ts/scroll-to'
 import animation from './ts/animation'
@@ -26,6 +27,7 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   sliderSwiper.init()
   yandexMap.init()
   airDatepicker.init()
+  themeNewYear.init()
   currentTab.init()
   scrollHeader.init()
   sidebar.init()

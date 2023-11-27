@@ -29,19 +29,19 @@
 
   <!-- Шапка документа -->
 
-  <header class="header container flex items-center justify-between gap-5 sticky xl:static z-3 top-0 left-0 right-0 bg-white border-b border-solid border-grey py-3 xl:py-5 duration-3" data-header>
+  <header class="header container flex items-center justify-between gap-5 sticky xl:relative z-4 top-0 left-0 right-0 bg-white border-b border-solid border-grey py-3 xl:py-5 duration-3" data-header>
     <button class="btn btn-primary xl:hidden text-38 sm:text-48" data-sidebar-open="menu" data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
       </svg>
     </button>
-    <a class="btn" data-waved="light" href="#">
-      <img class="icon text-40 sm:text-6xl" src="img/pictures/logo.svg" alt="">
+    <a class="header__btn btn" data-waved="light" href="#">
+      <img class="header__logo icon text-40 sm:text-6xl" src="img/pictures/logo.svg" alt="">
       <img class="hidden md:block w-36 ml-3" src="img/pictures/logo-text.svg" alt="">
     </a>
     <div class="hidden xl:flex items-center justify-between gap-10">
       <div class="flex items-center">
-        <div class="flex items-center justify-center bg-primary rounded-2 w-8 h-8 mr-3">
+        <div class="header__square flex items-center justify-center bg-primary rounded-2 w-8 h-8 mr-3">
           <svg class="icon text-white text-20">
             <use xlink:href="img/icons.svg#geo">
           </svg>
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="flex items-center">
-        <div class="flex items-center justify-center bg-primary rounded-2 w-8 h-8 mr-3">
+        <div class="header__square flex items-center justify-center bg-primary rounded-2 w-8 h-8 mr-3">
           <svg class="icon text-white text-20">
             <use xlink:href="img/icons.svg#clock">
           </svg>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="flex items-center">
-        <div class="flex items-center justify-center bg-primary rounded-2 w-8 h-8 mr-3">
+        <div class="header__square flex items-center justify-center bg-primary rounded-2 w-8 h-8 mr-3">
           <svg class="icon text-white text-20">
             <use xlink:href="img/icons.svg#tel">
           </svg>
@@ -109,9 +109,9 @@
     }
   ] %>
 
-  <nav class="container hidden xl:flex items-center justify-between sticky z-3 top-0 left-0 right-0 bg-white py-3">
+  <nav class="nav container hidden xl:flex items-center justify-between sticky z-3 top-0 left-0 right-0 bg-white py-3">
     <% for (var i = 0; i < nav.length; i++) { %>
-    <a class="btn btn-primary font-medium text-black rounded-1 p-1" data-scroll data-waved="light" href="<%= nav[i].id %>"><%= nav[i].text %></a>
+    <a class="nav__item btn btn-primary font-medium text-black rounded-1 p-1" data-scroll data-waved="light" href="<%= nav[i].id %>"><%= nav[i].text %></a>
     <% } %>
   </nav>
 
